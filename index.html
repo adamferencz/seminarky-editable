@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seminárky – Mockup</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="brand"><span class="logo-text">Seminárky</span></div>
+        <nav>
+          <a href="#" class="nav-link">Domů</a>
+          <div class="user-info">
+            <div>
+              <span class="user-name">Ferencz Adam</span>
+              <span class="user-role">Učitel</span>
+            </div>
+          </div>
+          <button class="logout-btn">Odhlásit se</button>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <!-- LEGENDA -->
+      <section class="legend-section" style="margin-bottom: 2rem">
+        <h2 style="font-size: 1.1rem; margin-top: 0">Legenda</h2>
+        <div class="legend">
+          <span class="legend-label"
+            ><span class="role-icon" title="Student">👤</span> Student</span
+          >
+          <span class="legend-label"
+            ><span class="role-icon" title="Vedoucí">🧑‍🏫</span> Vedoucí</span
+          >
+          <span class="legend-label"
+            ><span class="role-icon" title="Oponent">🕵️‍♂️</span> Oponent</span
+          >
+          <span class="legend-label legend-label--admin"
+            ><span class="role-icon" title="Admin">🛡️</span> Admin (centrální
+            nastavení)</span
+          >
+          <span class="legend-label"
+            ><span class="role-icon" style="font-size: 1.1em" title="Zamčeno"
+              >🔒</span
+            >
+            <span>Zamčeno pro studenta</span></span
+          >
+          <span class="legend-label" style="background: #e6f0ff; color: #1565c0"
+            ><span
+              class="role-icon"
+              style="font-size: 1.1em"
+              title="Centrálně zamčeno"
+              >🛡️</span
+            >
+            <span>Centrálně zamčeno (nastavuje admin)</span></span
+          >
+        </div>
+      </section>
+
+      <div class="editor-header">
+        <button class="back-button">&larr; Zpět</button>
+        <div class="project-info">
+          <h1>Bez názvu</h1>
+          <div class="meta">Adam Novák • 25-26 • 2029anecoxxxx-25-26</div>
+        </div>
+        <button class="save-button" disabled>Uložit</button>
+      </div>
+
+      <div class="editor-content">
+        <!-- FÁZE 1: Přihlášení práce -->
+        <section>
+          <h2>Fáze 1: Přihlášení práce</h2>
+          <div class="form-group">
+            <label
+              >Jméno studenta
+              <span class="role-label role-label--student" title="Pole vyplňuje student">👤Student</span>
+              <span class="role-label role-label--student deadline-label" title="Nejzazší termín pro vyplnění tohoto pole dle harmonogramu">📅 do 1. 9. 2025</span>
+            </label>
+            <div class="readonly-field readonly-field--with-label">
+              Adam Novák
+              <span
+                class="lock-icon"
+                title="Zamčeno pro studenta – pro odemknutí musí vedoucí zamítnout schválení"
+                >&#128274;</span
+              >
+            </div>
+          </div>
+          <div class="form-group">
+            <label
+              >Název práce
+              <span class="role-label role-label--student" title="Pole vyplňuje student">👤Student</span>
+              <span class="role-label role-label--student deadline-label" title="Nejzazší termín pro vyplnění tohoto pole dle harmonogramu">📅 do 1. 9. 2025</span>
+            </label>
+            <div class="readonly-field readonly-field--with-label">
+              Automatizace zpracování dat
+              <span class="lock-icon" title="Zamčeno pro studenta"
+                >&#128274;</span
+              >
+            </div>
+          </div>
+          <div class="form-group">
+            <label
+              >Vedoucí
+              <span class="role-label role-label--student" title="Pole vybírá student">👤Student</span>
+              <span class="role-label role-label--student deadline-label" title="Nejzazší termín pro vyplnění tohoto pole dle harmonogramu">📅 do 1. 9. 2025</span>
+              <span class="role-label role-label--teacher" title="Pole vyplňuje vedoucí">🧑‍🏫Vedoucí schválí</span>
+              <span class="role-label role-label--teacher deadline-label" title="Nejzazší termín pro vyplnění tohoto pole dle harmonogramu">📅 do 15. 10. 2025</span>
+            </label>
+            <div class="readonly-field readonly-field--with-label">
+              Mgr. Jan Vedoucí
+              <span class="approval-label approval-label--inline">
+                
+                Schváleno</span>
+              <span class="lock-icon" title="Zamčeno pro studenta"
+                >&#128274;</span
+              >
+            </div>
+          </div>
+          <div class="form-group">
+            <label
+              >Oponent
+              <span class="role-label role-label--student" title="Pole vybírá student">👤Student</span>
+              <span class="role-label role-label--student deadline-label" title="Nejzazší termín pro vyplnění tohoto pole dle harmonogramu">📅 do 1. 9. 2025</span>
+              <span class="role-label role-label--teacher" title="Pole vyplňuje vedoucí">🧑‍🏫Vedoucí schválí</span>
+              <span class="role-label role-label--teacher deadline-label" title="Nejzazší termín pro vyplnění tohoto pole dle harmonogramu">📅 do 15. 10. 2025</span>
+            </label>
+            <div class="readonly-field readonly-field--with-label">
+              Ing. Eva Oponentová
+              <span class="approval-label approval-label--inline">Schváleno</span>
+              <span
+                class="lock-icon"
+                title="Zamčeno pro studenta – pro odemknutí musí vedoucí zamítnout schválení"
+                >&#128274;</span
+              >
+            </div>
+          </div>
+        </section>
+
+        <!-- FÁZE 2: Schválení tématu -->
+        <section>
+          <h2>Fáze 2: Schválení tématu</h2>
+          <div class="form-group">
+            <label>
+              Konzultace 0 – cíle a metody práce
+              <span class="role-label role-label--student" title="Pole vyplňuje student">👤Student</span>
+              <span class="role-label role-label--student deadline-label" title="Nejzazší termín pro vyplnění tohoto pole dle harmonogramu">📅 do 15. 9. 2025</span>
+            </label>
+            <div class="richtext-mock readonly-field--with-label">
+              <ul>
+                <li>Automatizace sběru a analýzy dat pomocí Pythonu</li>
+                <li>
+                  Vytvoření nástroje pro efektivní zpracování dat z různých
+                  zdrojů
+                </li>
+                <li>Validace a vizualizace dat</li>
+              </ul>
+              <p><strong>Metody:</strong></p>
+              <ol>
+                <li>Analýza požadavků</li>
+                <li>Návrh architektury</li>
+                <li>Implementace a testování</li>
+              </ol>
+              <span class="lock-icon" title="Zamčeno pro studenta"
+                >&#128274;</span
+              >
+            </div>
+          </div>
+          <div class="form-group">
+            <label>
+              Schváleno komisí
+              <span class="role-label role-label--teacher" title="Pole vyplňuje vedoucí">🧑‍🏫Vedoucí</span>
+              <span class="role-label role-label--teacher deadline-label" title="Nejzazší termín pro vyplnění tohoto pole dle harmonogramu">📅 do 30. 9. 2025</span>
+            </label>
+            <span class="approval-label">Schváleno</span>
+          </div>
+          <div class="form-group">
+            <label>
+              Konzultace 0 – slovní hodnocení
+              <span class="role-label role-label--teacher" title="Pole vyplňuje vedoucí">🧑‍🏫Vedoucí</span>
+              <span class="role-label role-label--teacher deadline-label" title="Nejzazší termín pro vyplnění tohoto pole dle harmonogramu">📅 do 30. 9. 2025</span>
+            </label>
+            <div class="richtext-mock">
+              <p>Téma je <strong>aktuální</strong> a vhodné.</p>
+              <ul>
+                <li>Student prokázal dobrou orientaci v problematice</li>
+                <li>Navrhl smysluplné metody řešení</li>
+                <li>Očekávám kvalitní výstupy</li>
+              </ul>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>
+              Konzultace 0 – známka
+              <span class="role-label role-label--teacher" title="Pole vyplňuje vedoucí">🧑‍🏫Vedoucí</span>
+              <span class="role-label role-label--teacher deadline-label" title="Nejzazší termín pro vyplnění tohoto pole dle harmonogramu">📅 do 30. 9. 2025</span>
+            </label>
+            <div class="readonly-field">1</div>
+          </div>
+        </section>
+
+        <!-- FÁZE 3: Průběžné konzultace -->
+        <section>
+          <h2>Fáze 3: Průběžné konzultace</h2>
+          <h3>Konzultace 1</h3>
+          <div class="form-group">
+            <label
+              >Cíle pro 1. konzultaci
+              <span class="role-label role-label--student" title="Pole vyplňuje student">👤Student</span>
+              <span class="role-label role-label--student deadline-label" title="Nejzazší termín pro vyplnění tohoto pole dle harmonogramu">📅 do 15. 10. 2025</span>
+            </label>
+            <div class="richtext-mock readonly-field--with-label">
+              <ul>
+                <li>Navrhnout architekturu řešení</li>
+                <li>Připravit datové zdroje</li>
+                <li>Popsat jednotlivé kroky návrhu</li>
+                <li>Připravit ukázková data pro testování</li>
+              </ul>
+              <span class="lock-icon" title="Zamčeno pro studenta"
+                >&#128274;</span
+              >
+            </div>
+          </div>
+          <div class="form-group form-group--with-deadline">
+            <label>
+              Deadline
+              <span class="role-label role-label--student" title="Pole navrhuje student">👤Student</span>
+              <span class="role-label role-label--student deadline-label" title="Nejzazší termín pro vyplnění tohoto pole dle harmonogramu">📅 do 15. 10. 2025</span>
+            </label>
+            <div class="readonly-field readonly-field--with-label">
+              15. 10. 2025
+              <span class="lock-icon" title="Zamčeno pro studenta"
+                >&#128274;</span
+              >
+            </div>
+          </div>
+          <div class="form-group">
+            <label
+              >Schváleno vedoucím
+              <span
+                class="role-label role-label--teacher"
+                title="Pole vyplňuje vedoucí"
+                >🧑‍🏫Vedoucí</span
+              >
+              <span class="role-label role-label--teacher deadline-label" title="Nejzazší termín pro vyplnění tohoto pole dle harmonogramu">📅 do 15. 10. 2025</span>
+            </label>
+            <span class="approval-label">Schváleno</span>
+          </div>
+          <div class="form-group">
+            <label
+              >Slovní hodnocení
+              <span
+                class="role-label role-label--teacher"
+                title="Pole vyplňuje vedoucí"
+                >🧑‍🏫Vedoucí</span
+              >
+              <span class="role-label role-label--teacher deadline-label" title="Nejzazší termín pro vyplnění tohoto pole dle harmonogramu">📅 do 15. 10. 2025</span>
+            </label>
+            <div class="richtext-mock">
+              <p>Cíle splněny, návrh je kvalitní.</p>
+              <ul>
+                <li>Student aktivně konzultoval</li>
+                <li>Reagoval na připomínky</li>
+                <li>Práce je systematická</li>
+              </ul>
+            </div>
+          </div>
+          <div class="form-group">
+            <label
+              >Známka
+              <span
+                class="role-label role-label--teacher"
+                title="Pole vyplňuje vedoucí"
+                >🧑‍🏫Vedoucí</span
+              >
+              <span class="role-label role-label--teacher deadline-label" title="Nejzazší termín pro vyplnění tohoto pole dle harmonogramu">📅 do 15. 10. 2025</span>
+            </label>
+            <div class="readonly-field">1</div>
+          </div>
+          <h3>Konzultace 2</h3>
+          <div class="form-group">
+            <label
+              >Cíle pro 2. konzultaci
+              <span class="role-label role-label--student" title="Pole vyplňuje student">👤Student</span>
+              <span class="role-label role-label--student deadline-label" title="Nejzazší termín pro vyplnění tohoto pole dle harmonogramu">📅 do 15. 12. 2025</span>
+            </label>
+            <div class="richtext-mock readonly-field--with-label">
+              <ul>
+                <li>Implementace základních funkcí</li>
+                <li>Testování</li>
+                <li>Robustnost a dokumentace kódu</li>
+              </ul>
+              <span class="lock-icon" title="Zamčeno pro studenta"
+                >&#128274;</span
+              >
+            </div>
+          </div>
+          <div class="form-group form-group--with-deadline">
+            <label>
+              Deadline
+              <span class="role-label role-label--student" title="Pole navrhuje student">👤Student</span>
+              <span class="role-label role-label--student deadline-label" title="Nejzazší termín pro vyplnění tohoto pole dle harmonogramu">📅 do 15. 12. 2025</span>
+            </label>
+            <div class="readonly-field readonly-field--with-label">
+              15. 12. 2025
+              <span class="lock-icon" title="Zamčeno pro studenta"
+                >&#128274;</span
+              >
+            </div>
+          </div>
+          <div class="form-group">
+            <label
+              >Schváleno vedoucím
+              <span
+                class="role-label role-label--teacher"
+                title="Pole vyplňuje vedoucí"
+                >🧑‍🏫Vedoucí</span
+              >
+              <span class="role-label role-label--teacher deadline-label" title="Nejzazší termín pro vyplnění tohoto pole dle harmonogramu">📅 do 15. 12. 2025</span>
+            </label>
+            <span class="approval-label">Schváleno</span>
+          </div>
+          <div class="form-group">
+            <label
+              >Slovní hodnocení
+              <span
+                class="role-label role-label--teacher"
+                title="Pole vyplňuje vedoucí"
+                >🧑‍🏫Vedoucí</span
+              >
+              <span class="role-label role-label--teacher deadline-label" title="Nejzazší termín pro vyplnění tohoto pole dle harmonogramu">📅 do 15. 12. 2025</span>
+            </label>
+            <div class="richtext-mock">
+              <p>Implementace probíhá dle plánu.</p>
+              <ul>
+                <li>Kód je přehledný</li>
+                <li>Dobře komentovaný</li>
+              </ul>
+            </div>
+          </div>
+          <div class="form-group">
+            <label
+              >Známka
+              <span
+                class="role-label role-label--teacher"
+                title="Pole vyplňuje vedoucí"
+                >🧑‍🏫Vedoucí</span
+              >
+              <span class="role-label role-label--teacher deadline-label" title="Nejzazší termín pro vyplnění tohoto pole dle harmonogramu">📅 do 15. 12. 2025</span>
+            </label>
+            <div class="readonly-field">2</div>
+          </div>
+          <h3>Konzultace 3</h3>
+          <div class="form-group">
+            <label>
+              Cíle pro 3. konzultaci
+              <span
+                class="role-label role-label--admin"
+                title="Pole nastavuje admin centrálně"
+                >🛡️Admin</span
+              >
+            </label>
+            <div class="richtext-mock readonly-field--with-label">
+              <ul>
+                <li>Finalizace dokumentace</li>
+                <li>Příprava prezentace</li>
+                <li>Ověřit funkčnost na reálných datech</li>
+                <li>Připravit podklady pro obhajobu</li>
+              </ul>
+              <span
+                class="lock-icon lock-icon--central"
+                title="Centrálně zamčeno – pole nastavuje admin"
+                style="
+                  font-size: 1.15em;
+                  color: #1565c0;
+                  vertical-align: middle;
+                "
+                >🛡️</span
+              >
+            </div>
+          </div>
+          <div class="form-group form-group--with-deadline">
+            <label>
+              Deadline
+              <span
+                class="role-label role-label--admin"
+                title="Pole nastavuje admin centrálně"
+                >🛡️Admin</span
+              >
+              <span
+                class="role-label role-label--admin deadline-label"
+                title="Nejzazší termín pro vyplnění tohoto pole dle harmonogramu"
+                >📅 do 9. 2. 2026</span
+              >
+            </label>
+            <div class="readonly-field readonly-field--with-label">
+              15. 2. 2026
+              <span
+                class="lock-icon lock-icon--central"
+                title="Centrálně zamčeno – pole nastavuje admin"
+                style="
+                  font-size: 1.15em;
+                  color: #1565c0;
+                  vertical-align: middle;
+                "
+                >🛡️</span
+              >
+            </div>
+          </div>
+          <div class="form-group">
+            <label
+              >Slovní hodnocení
+              <span
+                class="role-label role-label--teacher"
+                title="Pole vyplňuje vedoucí"
+                >🧑‍🏫Vedoucí</span
+              >
+              <span class="role-label role-label--teacher deadline-label" title="Nejzazší termín pro vyplnění tohoto pole dle harmonogramu">📅 do 9. 2. 2026</span>
+            </label>
+            <div class="richtext-mock">
+              <p>Dokumentace je téměř hotová.</p>
+              <ul>
+                <li>Student prokázal schopnost samostatné práce</li>
+                <li>Prezentace je připravena</li>
+              </ul>
+            </div>
+          </div>
+          <div class="form-group">
+            <label
+              >Známka
+              <span
+                class="role-label role-label--teacher"
+                title="Pole vyplňuje vedoucí"
+                >🧑‍🏫Vedoucí</span
+              >
+              <span class="role-label role-label--teacher deadline-label" title="Nejzazší termín pro vyplnění tohoto pole dle harmonogramu">📅 do 9. 2. 2026</span>
+            </label>
+            <div class="readonly-field">1</div>
+          </div>
+        </section>
+
+        <!-- FÁZE 4: Odevzdávání před obhajobou -->
+        <section>
+          <h2>Fáze 4: Odevzdávání před obhajobou</h2>
+          <div class="form-group">
+            <label>Odkaz na práci</label>
+            <div class="readonly-field">
+              <a href="https://example.com/prace.pdf" target="_blank"
+                >https://example.com/prace.pdf</a
+              >
+            </div>
+          </div>
+          <div class="form-group">
+            <label
+              >Schváleno vedoucím
+              <span
+                class="role-label role-label--teacher"
+                title="Pole vyplňuje vedoucí"
+                >🧑‍🏫Vedoucí</span
+              >
+            </label>
+            <span class="approval-label">Schváleno</span>
+          </div>
+          <div class="form-group">
+            <label>Odkaz na prezentaci na obhajobu</label>
+            <div class="readonly-field">
+              <a href="https://example.com/prezentace.pptx" target="_blank"
+                >https://example.com/prezentace.pptx</a
+              >
+            </div>
+          </div>
+          <div class="form-group">
+            <label
+              >Schváleno vedoucím
+              <span
+                class="role-label role-label--teacher"
+                title="Pole vyplňuje vedoucí"
+                >🧑‍🏫Vedoucí</span
+              >
+            </label>
+            <span class="approval-label">Schváleno</span>
+          </div>
+        </section>
+
+        <!-- FÁZE 5: Hodnocení a dotazy -->
+        <section>
+          <h2>Fáze 5: Hodnocení a dotazy</h2>
+          <div class="form-group">
+            <label>Hodnocení oponenta</label>
+            <div class="richtext-mock">
+              <p>Práce je kvalitní, doporučuji k obhajobě.</p>
+              <ul>
+                <li>Ocenil jsem zejména přehlednost a systematičnost řešení</li>
+                <li>Výsledky odpovídají zadání</li>
+                <li>Student vhodně reagoval na připomínky</li>
+              </ul>
+            </div>
+          </div>
+          <div class="form-group">
+            <label
+              >Hodnocení vedoucího
+              <span
+                class="role-label role-label--teacher"
+                title="Pole vyplňuje vedoucí"
+                >🧑‍🏫Vedoucí</span
+              >
+            </label>
+            <div class="richtext-mock">
+              <p>Student pracoval samostatně a zodpovědně.</p>
+              <ul>
+                <li>Pravidelně konzultoval</li>
+                <li>Plnil zadané úkoly včas</li>
+                <li>Prokázal schopnost samostatné práce</li>
+              </ul>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Otázky na obhajobu (oponent)</label>
+            <div class="readonly-field">Jak jste řešil validaci dat?</div>
+          </div>
+          <div class="form-group">
+            <label
+              >Otázky na obhajobu (vedoucí)
+              <span
+                class="role-label role-label--teacher"
+                title="Pole vyplňuje vedoucí"
+                >🧑‍🏫Vedoucí</span
+              >
+            </label>
+            <div class="readonly-field">Jaké jsou limity vašeho řešení?</div>
+          </div>
+        </section>
+
+        <!-- FÁZE 6: Známkování -->
+        <section>
+          <h2>Fáze 6: Známkování</h2>
+          <h3>Praktická část</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Známka vedoucí</label>
+              <div class="readonly-field">1</div>
+            </div>
+            <div class="form-group">
+              <label>Známka oponent</label>
+              <div class="readonly-field">2</div>
+            </div>
+            <div class="form-group">
+              <label>Průměr</label>
+              <div class="readonly-field">1,5</div>
+            </div>
+          </div>
+          <h3>Teoretická část</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Známka vedoucí</label>
+              <div class="readonly-field">2</div>
+            </div>
+            <div class="form-group">
+              <label>Známka oponent</label>
+              <div class="readonly-field">2</div>
+            </div>
+            <div class="form-group">
+              <label>Průměr</label>
+              <div class="readonly-field">2</div>
+            </div>
+          </div>
+          <h3>Formální část</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Známka vedoucí</label>
+              <div class="readonly-field">1</div>
+            </div>
+            <div class="form-group">
+              <label>Známka oponent</label>
+              <div class="readonly-field">1</div>
+            </div>
+            <div class="form-group">
+              <label>Průměr</label>
+              <div class="readonly-field">1</div>
+            </div>
+          </div>
+          <h3>Obhajoba</h3>
+          <div class="form-group">
+            <label>Známka</label>
+            <div class="readonly-field">1</div>
+          </div>
+        </section>
+
+        <!-- FÁZE 7: Souhrn všech známek a finální známka -->
+        <section>
+          <h2>Fáze 7: Souhrn všech známek a finální známka</h2>
+          <table class="grades-summary">
+            <thead>
+              <tr>
+                <th>Položka</th>
+                <th>Známka</th>
+                <th>Váha</th>
+                <th>Vážený průměr</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Konzultace 0</td>
+                <td>1</td>
+                <td>3</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>Konzultace 1</td>
+                <td>1</td>
+                <td>7</td>
+                <td>7</td>
+              </tr>
+              <tr>
+                <td>Konzultace 2</td>
+                <td>2</td>
+                <td>7</td>
+                <td>14</td>
+              </tr>
+              <tr>
+                <td>Konzultace 3</td>
+                <td>1</td>
+                <td>3</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>Teoretická část</td>
+                <td>2</td>
+                <td>20</td>
+                <td>40</td>
+              </tr>
+              <tr>
+                <td>Praktická část</td>
+                <td>1,5</td>
+                <td>25</td>
+                <td>37,5</td>
+              </tr>
+              <tr>
+                <td>Formální část</td>
+                <td>1</td>
+                <td>10</td>
+                <td>10</td>
+              </tr>
+              <tr>
+                <td>Obhajoba</td>
+                <td>1</td>
+                <td>25</td>
+                <td>25</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th colspan="3">Celkem</th>
+                <th>139,5</th>
+              </tr>
+              <tr>
+                <th colspan="3">Výsledná známka</th>
+                <th>1,3 (zaokrouhleno na 1)</th>
+              </tr>
+            </tfoot>
+          </table>
+        </section>
+      </div>
+    </main>
+    <script>
+      // Mini JS pro interakci - např. zobrazení zprávy při kliknutí na Uložit
+      document
+        .querySelector(".save-button")
+        .addEventListener("click", function () {
+          alert("Uložení není v mockupu implementováno.");
+        });
+    </script>
+    <script
+      src="https://cdn.tiny.cloud/1/br2gumtoc8asbkqki5iaxu09sx5lkdkpf7jbjk2u4qkia5ul/tinymce/7/tinymce.min.js"
+      referrerpolicy="origin"
+    ></script>
+    <script>
+      tinymce.init({
+        selector: "textarea.tinymce",
+        plugins: [
+          "anchor",
+          "autolink",
+          "charmap",
+          "codesample",
+          "emoticons",
+          "image",
+          "link",
+          "lists",
+          "media",
+          "searchreplace",
+          "table",
+          "visualblocks",
+          "wordcount",
+          "checklist",
+          "mediaembed",
+          "casechange",
+          "formatpainter",
+          "pageembed",
+          "a11ychecker",
+          "tinymcespellchecker",
+          "permanentpen",
+          "powerpaste",
+          "advtable",
+          "advcode",
+          "editimage",
+          "advtemplate",
+          "ai",
+          "mentions",
+          "tinycomments",
+          "tableofcontents",
+          "footnotes",
+          "mergetags",
+          "autocorrect",
+          "typography",
+          "inlinecss",
+          "markdown",
+          "importword",
+          "exportword",
+          "exportpdf",
+        ],
+        toolbar:
+          "undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat",
+        tinycomments_mode: "embedded",
+        tinycomments_author: "Author name",
+        mergetags_list: [
+          { value: "First.Name", title: "First Name" },
+          { value: "Email", title: "Email" },
+        ],
+        ai_request: (request, respondWith) =>
+          respondWith.string(() =>
+            Promise.reject("See docs to implement AI Assistant")
+          ),
+      });
+    </script>
+  </body>
+</html>
