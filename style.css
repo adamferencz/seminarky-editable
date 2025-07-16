@@ -146,6 +146,16 @@ section h2 {
 .form-group {
   margin-bottom: 1rem;
 }
+.form-group > label {
+  font-weight: 700;
+  color: #eee;
+  font-size: 1.02rem;
+}
+.form-group > label .role-label,
+.form-group > label .deadline-label {
+  font-weight: 500;
+  font-size: 0.95em;
+}
 label {
   display: block;
   margin-bottom: 0.5rem;
@@ -373,6 +383,100 @@ label {
   gap: 0.3em;
   vertical-align: middle;
   cursor: help;
+}
+.consultation-block {
+  background: #181a20;
+  border: 2px solid #31343c;
+  border-radius: 1em;
+  padding: 1.5em 1.2em;
+  margin-bottom: 2.5em;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.08);
+}
+.consultation-block h3 {
+  margin-top: 0;
+}
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.2em;
+}
+.help-chip {
+  background: #23272f;
+  color: #0af;
+  border: 1px solid #0af;
+  border-radius: 1.2em;
+  padding: 0.3em 1em;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.help-chip:hover {
+  background: #0af;
+  color: #fff;
+}
+.help-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #23272f;
+  color: #fff;
+  border-radius: 1em;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.25);
+  z-index: 9999;
+  min-width: 320px;
+  max-width: 90vw;
+  padding: 2em 2em 1.5em 2em;
+}
+.help-popup-content h3 {
+  margin-top: 0;
+  font-size: 1.15em;
+  color: #0af;
+}
+.help-popup-content ul {
+  margin-top: 1em;
+  margin-bottom: 0;
+  padding-left: 1.2em;
+}
+.help-popup-close {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+.grades-row-header {
+  display: flex;
+  align-items: center;
+  gap: 1.2em;
+  margin-bottom: 0.5em;
+}
+.grades-row-header h3 {
+  margin: 0;
+  font-size: 1.08em;
+  font-weight: 600;
+}
+.grades-row-labels {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.grades-row-labels .role-label,
+.grades-row-labels .deadline-label {
+  font-size: 0.92em;
+  padding: 0.08em 0.6em 0.08em 0.45em;
+  margin-left: 0;
+  margin-right: 0.2em;
+  vertical-align: middle;
+}
+.grades-block {
+  margin-bottom: 2em;
 }
 @media (max-width: 800px) {
   main {
