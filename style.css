@@ -165,7 +165,7 @@ label {
 }
 .readonly-field {
   padding: 0.75rem;
-  background: #23272f;
+  background: #474b52;
   border: 1px solid #353940;
   border-radius: 8px;
   color: #fff;
@@ -177,7 +177,7 @@ label {
   align-items: center;
   justify-content: space-between;
   gap: 1em;
-  background: #23272f;
+  background: #474b52;
   color: #fff;
   border-radius: 0.5em;
   padding: 0.75em 1em;
@@ -207,7 +207,7 @@ label {
   gap: 2rem;
 }
 .richtext-mock {
-  background: #323843;
+  background: #474b52;
   color: #fff;
   border-radius: 0.5em;
   padding: 0.75em 1em;
