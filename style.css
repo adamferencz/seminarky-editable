@@ -155,7 +155,7 @@ label {
 }
 .readonly-field {
   padding: 0.75rem;
-  background: #191c21;
+  background: #23272f;
   border: 1px solid #353940;
   border-radius: 8px;
   color: #fff;
@@ -167,6 +167,15 @@ label {
   align-items: center;
   justify-content: space-between;
   gap: 1em;
+  background: #23272f;
+  color: #fff;
+  border-radius: 0.5em;
+  padding: 0.75em 1em;
+  margin-top: 0.25em;
+  margin-bottom: 0.5em;
+  font-size: 1em;
+  box-shadow: none;
+  border: none;
 }
 .select-button {
   width: 100%;
@@ -188,13 +197,15 @@ label {
   gap: 2rem;
 }
 .richtext-mock {
-  background: #fff;
-  color: #222;
-  border: 1px solid #d0d0d0;
-  border-radius: 6px;
-  padding: 1em 1.2em;
-  margin: 0.3em 0 0.7em 0;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  background: #323843;
+  color: #fff;
+  border-radius: 0.5em;
+  padding: 0.75em 1em;
+  margin-top: 0.25em;
+  margin-bottom: 0.5em;
+  font-size: 1em;
+  box-shadow: none;
+  border: none;
 }
 .grades-summary {
   width: 100%;
