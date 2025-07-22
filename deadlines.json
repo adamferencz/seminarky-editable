@@ -1,0 +1,41 @@
+{
+  "deadlines": {
+    "student": "2025-09-01",
+    "supervisor": "2025-09-10",
+    "opponent": "2025-09-20",
+    "title": "2025-09-05",
+    "supervisorApproval": "2025-09-30",
+    "opponentApproval": "2025-10-15",
+    "goals": "2025-09-15",
+    "k0": {
+      "evaluation": "2025-09-30",
+      "grade": "2025-10-01"
+    },
+    "k1": {
+      "goals": "2025-10-31",
+      "evaluation": "2025-11-15",
+      "grade": "2025-11-16"
+    },
+    "k2": {
+      "goals": "2025-12-15",
+      "evaluation": "2025-12-31",
+      "grade": "2026-01-01"
+    },
+    "k3": {
+      "evaluation": "2026-02-15",
+      "grade": "2026-02-16"
+    },
+    "submission": "2026-03-31",
+    "reviews": {
+      "supervisor": "2026-04-15",
+      "opponent": "2026-04-15"
+    },
+    "finalGrades": {
+      "practical": "2026-04-30",
+      "theoretical": "2026-04-30",
+      "formal": "2026-04-30",
+      "defense": "2026-05-15",
+      "final": "2026-05-20"
+    }
+  }
+}

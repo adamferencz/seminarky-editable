@@ -1,0 +1,374 @@
+{
+  "seminarWorks": [
+    {
+      "student": "Adam Novák",
+      "supervisor": "Mgr. Jan Vedoucí",
+      "opponent": "Ing. Eva Oponentová",
+      "title": "Automatizace zpracování dat",
+      "supervisorApproval": "approved",
+      "opponentApproval": "approved",
+      "goals": "Automatizace sběru a analýzy dat z různých zdrojů pomocí Python skriptů. Implementace strojového učení pro klasifikaci dat.",
+      "k0": {
+        "evaluation": "Téma je aktuální a vhodné pro praktické využití. Student má jasnou představu o implementaci.",
+        "grade": 1
+      },
+      "k1": {
+        "goals": "Navrhnout architekturu řešení a implementovat základní sběr dat",
+        "evaluation": "Student aktivně konzultoval a připravil kvalitní návrh architektury",
+        "grade": 1
+      },
+      "k2": {
+        "goals": "Implementace základních funkcí a testování",
+        "evaluation": "Implementace probíhá dle plánu, kód je dobře dokumentovaný",
+        "grade": 2
+      },
+      "k3": {
+        "evaluation": "Dokumentace je téměř hotová, zbývá dopracovat některé detaily",
+        "grade": 1
+      },
+      "submitted": "approved",
+      "supervisorReview": "Student pracoval samostatně a proaktivně. Výsledné řešení je velmi kvalitní a prakticky použitelné.",
+      "opponentReview": "Práce je kvalitní a dobře strukturovaná. Implementace splňuje všechny stanovené cíle.",
+      "grades": {
+        "practical": 1.5,
+        "theoretical": 2.0,
+        "formal": 1.0,
+        "defense": 1.0,
+        "final": 1.3
+      }
+    },
+    {
+      "student": "Barbora Veselá",
+      "supervisor": "Ing. Pavel Novotný",
+      "opponent": "Dr. Jan Černý",
+      "title": "Analýza sociálních sítí",
+      "supervisorApproval": "approved",
+      "opponentApproval": "pending",
+      "goals": "Analýza vlivu sociálních sítí na chování uživatelů. Vytvoření prediktivního modelu.",
+      "k0": {
+        "evaluation": "Zajímavé téma s praktickým využitím, dobře definované cíle",
+        "grade": 1
+      },
+      "k1": {
+        "goals": "Sběr dat z různých platforem a jejich předzpracování",
+        "evaluation": null,
+        "grade": null
+      },
+      "k2": {
+        "goals": null,
+        "evaluation": null,
+        "grade": null
+      },
+      "k3": {
+        "evaluation": null,
+        "grade": null
+      },
+      "submitted": null,
+      "supervisorReview": null,
+      "opponentReview": null,
+      "grades": {
+        "practical": null,
+        "theoretical": null,
+        "formal": null,
+        "defense": null,
+        "final": null
+      }
+    },
+    {
+      "student": "Cyril Dvořák",
+      "supervisor": "Dr. Marie Konečná",
+      "opponent": "Mgr. Jan Vedoucí",
+      "title": "Virtuální realita ve vzdělávání",
+      "supervisorApproval": "approved",
+      "opponentApproval": "approved",
+      "goals": "Vytvoření výukové aplikace ve virtuální realitě pro výuku fyziky",
+      "k0": {
+        "evaluation": "Inovativní přístup k výuce, dobře promyšlený koncept",
+        "grade": 1
+      },
+      "k1": {
+        "goals": "Návrh uživatelského rozhraní a základních interakcí",
+        "evaluation": "Kvalitní návrh UI, zohledněny principy UX designu",
+        "grade": 1
+      },
+      "k2": {
+        "goals": "Implementace první verze aplikace",
+        "evaluation": "Aplikace splňuje základní požadavky, nutné doladit detaily",
+        "grade": 2
+      },
+      "k3": {
+        "evaluation": "Finální verze připravena k testování",
+        "grade": 2
+      },
+      "submitted": "approved",
+      "supervisorReview": "Projekt byl realizován s velkým nasazením, výsledek je nad očekávání dobrý",
+      "opponentReview": "Aplikace je funkční a uživatelsky přívětivá, dokumentace je kompletní",
+      "grades": {
+        "practical": 1.0,
+        "theoretical": 2.0,
+        "formal": 2.0,
+        "defense": 1.0,
+        "final": 1.5
+      }
+    },
+    {
+      "student": "Dana Malá",
+      "supervisor": "Ing. Pavel Novotný",
+      "opponent": "Dr. Marie Konečná",
+      "title": "Blockchain v logistice",
+      "supervisorApproval": "pending",
+      "opponentApproval": "pending",
+      "goals": "Implementace blockchain řešení pro sledování dodavatelského řetězce",
+      "k0": {
+        "evaluation": "Složité, ale velmi aktuální téma. Nutné zúžit rozsah.",
+        "grade": 2
+      },
+      "k1": {
+        "goals": "Analýza požadavků a návrh architektury",
+        "evaluation": "Dobrá analýza, architektura vyžaduje úpravy",
+        "grade": 3
+      },
+      "k2": {
+        "goals": null,
+        "evaluation": null,
+        "grade": null
+      },
+      "k3": {
+        "evaluation": null,
+        "grade": null
+      },
+      "submitted": null,
+      "supervisorReview": null,
+      "opponentReview": null,
+      "grades": {
+        "practical": null,
+        "theoretical": null,
+        "formal": null,
+        "defense": null,
+        "final": null
+      }
+    },
+    {
+      "student": "Emil Horák",
+      "supervisor": "Dr. Marie Konečná",
+      "opponent": "Ing. Eva Oponentová",
+      "title": "Umělá inteligence v medicíně",
+      "supervisorApproval": "rejected",
+      "opponentApproval": "pending",
+      "goals": "Vývoj AI systému pro analýzu medicínských snímků",
+      "k0": {
+        "evaluation": "Téma je příliš široké, nutné více specifikovat cíle",
+        "grade": 3
+      },
+      "k1": {
+        "goals": "Sběr a příprava datasetu",
+        "evaluation": "Dataset je nekvalitní, nutné přepracovat",
+        "grade": 4
+      },
+      "k2": {
+        "goals": null,
+        "evaluation": null,
+        "grade": null
+      },
+      "k3": {
+        "evaluation": null,
+        "grade": null
+      },
+      "submitted": null,
+      "supervisorReview": null,
+      "opponentReview": null,
+      "grades": {
+        "practical": null,
+        "theoretical": null,
+        "formal": null,
+        "defense": null,
+        "final": null
+      }
+    },
+    {
+      "student": "Filip Král",
+      "supervisor": "Mgr. Jan Vedoucí",
+      "opponent": "Dr. Jan Černý",
+      "title": "IoT systém pro smart home",
+      "supervisorApproval": "approved",
+      "opponentApproval": "approved",
+      "goals": "Vytvoření komplexního systému pro automatizaci domácnosti",
+      "k0": {
+        "evaluation": "Výborně zpracovaný návrh projektu",
+        "grade": 1
+      },
+      "k1": {
+        "goals": "Implementace základního hardware",
+        "evaluation": "Hardware funguje dle specifikace",
+        "grade": 1
+      },
+      "k2": {
+        "goals": "Vývoj řídicího software",
+        "evaluation": "Software je funkční, dokumentace neúplná",
+        "grade": 2
+      },
+      "k3": {
+        "evaluation": "Systém je připraven k nasazení",
+        "grade": 1
+      },
+      "submitted": "approved",
+      "supervisorReview": "Vynikající práce s praktickým využitím",
+      "opponentReview": "Komplexní řešení s důrazem na bezpečnost",
+      "grades": {
+        "practical": 1.0,
+        "theoretical": 1.0,
+        "formal": 2.0,
+        "defense": 1.0,
+        "final": 1.2
+      }
+    },
+    {
+      "student": "Gabriela Tichá",
+      "supervisor": "Dr. Jan Černý",
+      "opponent": "Ing. Pavel Novotný",
+      "title": "Mobilní aplikace pro fitness",
+      "supervisorApproval": "approved",
+      "opponentApproval": "approved",
+      "goals": "Vývoj aplikace pro sledování fitness aktivit a nutriční poradenství",
+      "k0": {
+        "evaluation": "Dobře definované cíle a plán implementace",
+        "grade": 2
+      },
+      "k1": {
+        "goals": "UI/UX design a prototyp",
+        "evaluation": "Prototyp je funkční a uživatelsky přívětivý",
+        "grade": 1
+      },
+      "k2": {
+        "goals": "Implementace backend části",
+        "evaluation": "Backend implementován včetně testů",
+        "grade": 1
+      },
+      "k3": {
+        "evaluation": "Aplikace je kompletní a otestovaná",
+        "grade": 1
+      },
+      "submitted": "approved",
+      "supervisorReview": "Vynikající práce s potenciálem pro reálné nasazení",
+      "opponentReview": "Kvalitní implementace s důrazem na uživatelský zážitek",
+      "grades": {
+        "practical": 1.0,
+        "theoretical": 2.0,
+        "formal": 1.0,
+        "defense": 1.0,
+        "final": 1.2
+      }
+    },
+    {
+      "student": "Helena Sýkorová",
+      "supervisor": "Ing. Eva Oponentová",
+      "opponent": "Dr. Marie Konečná",
+      "title": "E-learning platforma",
+      "supervisorApproval": "pending",
+      "opponentApproval": "pending",
+      "goals": "Vytvoření moderní e-learning platformy s gamifikací",
+      "k0": {
+        "evaluation": "Zajímavý koncept, nutné lépe definovat gamifikační prvky",
+        "grade": 2
+      },
+      "k1": {
+        "goals": "Návrh architektury a databázového modelu",
+        "evaluation": "Architektura je promyšlená, model vyžaduje optimalizaci",
+        "grade": 2
+      },
+      "k2": {
+        "goals": null,
+        "evaluation": null,
+        "grade": null
+      },
+      "k3": {
+        "evaluation": null,
+        "grade": null
+      },
+      "submitted": null,
+      "supervisorReview": null,
+      "opponentReview": null,
+      "grades": {
+        "practical": null,
+        "theoretical": null,
+        "formal": null,
+        "defense": null,
+        "final": null
+      }
+    },
+    {
+      "student": "Ivan Svoboda",
+      "supervisor": "Dr. Jan Černý",
+      "opponent": "Mgr. Jan Vedoucí",
+      "title": "Cybersecurity monitoring",
+      "supervisorApproval": "approved",
+      "opponentApproval": "approved",
+      "goals": "Vytvoření systému pro monitoring a detekci bezpečnostních hrozeb",
+      "k0": {
+        "evaluation": "Výborně zpracovaný návrh s důrazem na bezpečnost",
+        "grade": 1
+      },
+      "k1": {
+        "goals": "Implementace monitorovacího systému",
+        "evaluation": "Systém splňuje všechny požadavky",
+        "grade": 1
+      },
+      "k2": {
+        "goals": "Testování a optimalizace",
+        "evaluation": "Úspěšné testování, vysoká efektivita",
+        "grade": 1
+      },
+      "k3": {
+        "evaluation": "Systém je připraven k nasazení",
+        "grade": 1
+      },
+      "submitted": "approved",
+      "supervisorReview": "Vynikající práce s praktickým využitím v oblasti bezpečnosti",
+      "opponentReview": "Komplexní řešení s důrazem na prevenci hrozeb",
+      "grades": {
+        "practical": 1.0,
+        "theoretical": 1.0,
+        "formal": 1.0,
+        "defense": 1.0,
+        "final": 1.0
+      }
+    },
+    {
+      "student": "Jana Procházková",
+      "supervisor": "Ing. Pavel Novotný",
+      "opponent": "Dr. Jan Černý",
+      "title": "AR aplikace pro muzea",
+      "supervisorApproval": "approved",
+      "opponentApproval": "approved",
+      "goals": "Vývoj AR aplikace pro interaktivní prohlídky muzeí",
+      "k0": {
+        "evaluation": "Inovativní projekt s jasnou vizí",
+        "grade": 1
+      },
+      "k1": {
+        "goals": "Prototyp základních AR funkcí",
+        "evaluation": "Prototyp funguje dle očekávání",
+        "grade": 2
+      },
+      "k2": {
+        "goals": "Implementace obsahové části",
+        "evaluation": "Obsah je kvalitně zpracován",
+        "grade": 1
+      },
+      "k3": {
+        "evaluation": "Aplikace je připravena k testování",
+        "grade": 2
+      },
+      "submitted": "approved",
+      "supervisorReview": "Kvalitní práce s potenciálem pro reálné využití",
+      "opponentReview": "Aplikace je dobře navržena a implementována",
+      "grades": {
+        "practical": 1.5,
+        "theoretical": 2.0,
+        "formal": 1.0,
+        "defense": 2.0,
+        "final": 1.6
+      }
+    }
+  ]
+}
