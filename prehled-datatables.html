@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Přehled seminárních prací (DataTables)</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css"
+    />
+    <style>
+      body {
+        font-family: "Inter", Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background: #f5f5f5;
+      }
+      .container {
+        max-width: 100%;
+        overflow-x: auto;
+      }
+      .page-header {
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .page-header h1 {
+        margin: 0 0 8px 0;
+        color: #23272f;
+      }
+      .subtitle {
+        color: #666;
+        margin: 0;
+      }
+      .dt-buttons {
+        margin-bottom: 10px;
+      }
+      table.dataTable th,
+      table.dataTable td {
+        font-size: 12px;
+        padding: 6px 4px;
+        min-width: 28px;
+        max-width: 120px;
+        word-break: break-word;
+      }
+      .grade {
+        font-weight: 600;
+        padding: 2px 6px;
+        border-radius: 4px;
+        text-align: center;
+        font-size: 12px;
+        min-width: 22px !important;
+        max-width: 32px !important;
+      }
+      .status {
+        font-weight: 500;
+        padding: 2px 6px;
+        border-radius: 4px;
+        text-align: center;
+        white-space: nowrap;
+        font-size: 12px;
+        min-width: 40px;
+        max-width: 80px;
+      }
+      .status-approved {
+        background: #e8f5e9;
+        color: #2e7d32;
+      }
+      .status-pending {
+        background: #fff3e0;
+        color: #ef6c00;
+      }
+      .status-rejected {
+        background: #ffebee;
+        color: #c62828;
+      }
+      .has-content {
+        cursor: pointer;
+        color: #1976d2;
+        text-decoration: underline;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css"
+    />
+  </head>
+  <body>
+    <div class="page-header">
+      <div>
+        <h1>Přehled seminárních prací</h1>
+        <p class="subtitle">Akademický rok 2025/2026</p>
+      </div>
+    </div>
+    <div class="container">
+      <table id="seminarTable" class="display" style="width: 100%">
+        <thead>
+          <tr>
+            <th>Student</th>
+            <th>Vedoucí</th>
+            <th>Oponent</th>
+            <th>Název práce</th>
+            <th>Schválení vedoucího</th>
+            <th>Schválení oponenta</th>
+            <th>Cíle práce</th>
+            <th>K0 - hodnocení</th>
+            <th>K0 - známka</th>
+            <th>K1 - cíle</th>
+            <th>K1 - hodnocení</th>
+            <th>K1 - známka</th>
+            <th>K2 - cíle</th>
+            <th>K2 - hodnocení</th>
+            <th>K2 - známka</th>
+            <th>K3 - hodnocení</th>
+            <th>K3 - známka</th>
+            <th>Odevzdáno</th>
+            <th>Hodnocení vedoucího</th>
+            <th>Hodnocení oponenta</th>
+            <th>Praktická část</th>
+            <th>Teoretická část</th>
+            <th>Formální část</th>
+            <th>Obhajoba</th>
+            <th>Výsledná známka</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div
+      id="modal"
+      class="modal"
+      style="
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+      "
+    >
+      <div
+        class="modal-content"
+        style="
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background: white;
+          padding: 20px;
+          border-radius: 8px;
+          max-width: 600px;
+          width: 90%;
+          max-height: 80vh;
+          overflow-y: auto;
+        "
+      >
+        <span
+          class="close-modal"
+          style="
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            cursor: pointer;
+            font-size: 24px;
+            color: #666;
+          "
+          onclick="$('#modal').hide()"
+          >&times;</span
+        >
+        <h3 id="modal-title"></h3>
+        <div id="modal-content"></div>
+      </div>
+    </div>
+    <script>
+      function showModal(title, content) {
+        $("#modal-title").text(title);
+        $("#modal-content").text(content);
+        $("#modal").show();
+      }
+      $(document).ready(function () {
+        $.getJSON("data.json", function (data) {
+          var rows = data.seminarWorks.map(function (work) {
+            return [
+              work.student,
+              work.supervisor,
+              work.opponent,
+              work.title,
+              `<span class="status status-${
+                work.supervisorApproval
+              }">${getStatusText(work.supervisorApproval)}</span>`,
+              `<span class="status status-${
+                work.opponentApproval
+              }">${getStatusText(work.opponentApproval)}</span>`,
+              work.goals
+                ? `<span class='has-content' onclick="showModal('Cíle práce - ${work.student}', '${work.goals}')">Zobrazit</span>`
+                : "-",
+              work.k0?.evaluation
+                ? `<span class='has-content' onclick="showModal('Konzultace 0 - ${work.student}', '${work.k0.evaluation}')">Zobrazit</span>`
+                : "-",
+              formatGrade(work.k0?.grade),
+              work.k1?.goals
+                ? `<span class='has-content' onclick="showModal('Konzultace 1 - ${work.student}', '${work.k1.goals}')">Zobrazit</span>`
+                : "-",
+              work.k1?.evaluation
+                ? `<span class='has-content' onclick="showModal('Hodnocení K1 - ${work.student}', '${work.k1.evaluation}')">Zobrazit</span>`
+                : "-",
+              formatGrade(work.k1?.grade),
+              work.k2?.goals
+                ? `<span class='has-content' onclick="showModal('Konzultace 2 - ${work.student}', '${work.k2.goals}')">Zobrazit</span>`
+                : "-",
+              work.k2?.evaluation
+                ? `<span class='has-content' onclick="showModal('Hodnocení K2 - ${work.student}', '${work.k2.evaluation}')">Zobrazit</span>`
+                : "-",
+              formatGrade(work.k2?.grade),
+              work.k3?.evaluation
+                ? `<span class='has-content' onclick="showModal('Hodnocení K3 - ${work.student}', '${work.k3.evaluation}')">Zobrazit</span>`
+                : "-",
+              formatGrade(work.k3?.grade),
+              work.submitted
+                ? `<span class="status status-${
+                    work.submitted
+                  }">${getStatusText(work.submitted)}</span>`
+                : "-",
+              work.supervisorReview
+                ? `<span class='has-content' onclick="showModal('Hodnocení vedoucího - ${work.student}', '${work.supervisorReview}')">Zobrazit</span>`
+                : "-",
+              work.opponentReview
+                ? `<span class='has-content' onclick="showModal('Hodnocení oponenta - ${work.student}', '${work.opponentReview}')">Zobrazit</span>`
+                : "-",
+              formatGrade(work.grades?.practical),
+              formatGrade(work.grades?.theoretical),
+              formatGrade(work.grades?.formal),
+              formatGrade(work.grades?.defense),
+              formatGrade(work.grades?.final),
+            ];
+          });
+          var table = $("#seminarTable").DataTable({
+            data: rows,
+            dom: "Bfrtip",
+            buttons: [
+              {
+                extend: "excelHtml5",
+                text: "Exportovat do Excelu",
+                className: "dt-export-btn",
+                filename: "seminarni_prace",
+                exportOptions: {
+                  columns: ":visible",
+                },
+              },
+            ],
+            language: {
+              url: "https://cdn.datatables.net/plug-ins/1.13.6/i18n/cs.json",
+            },
+            pageLength: 25,
+          });
+        });
+        function formatGrade(grade) {
+          if (grade === null || grade === undefined) return "-";
+          return `<span class="grade grade-${Math.ceil(
+            grade
+          )}">${Number(grade).toFixed(1).replace(".", ",")}</span>`;
+        }
+        function getStatusText(status) {
+          const statusTexts = {
+            approved: "Schváleno",
+            pending: "Čeká",
+            rejected: "Zamítnuto",
+          };
+          return statusTexts[status] || "-";
+        }
+      });
+    </script>
+  </body>
+</html>

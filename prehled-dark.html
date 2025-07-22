@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Přehled seminárních prací (Dark Mode)</title>
+    <style>
+      body {
+        font-family: "Inter", Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background: #181a20;
+        color: #e0e0e0;
+      }
+      .container {
+        max-width: 100%;
+        overflow-x: auto;
+      }
+      .page-header {
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .page-header h1 {
+        margin: 0 0 8px 0;
+        color: #fafafa;
+      }
+      .subtitle {
+        color: #888;
+        margin: 0;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background: #23272f;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      th,
+      td {
+        font-size: 12px;
+        padding: 6px 4px;
+        min-width: 28px;
+        max-width: 120px;
+        word-break: break-word;
+        border-bottom: 1px solid #333;
+      }
+      th {
+        background: #23272f;
+        color: #e0e0e0;
+        font-weight: 600;
+      }
+      tr:last-child td {
+        border-bottom: none;
+      }
+      .grade {
+        font-weight: 600;
+        padding: 2px 6px;
+        border-radius: 4px;
+        text-align: center;
+        font-size: 12px;
+        min-width: 22px;
+        max-width: 32px;
+        background: #222;
+        color: #ffd700;
+      }
+      .status {
+        font-weight: 500;
+        padding: 2px 6px;
+        border-radius: 4px;
+        text-align: center;
+        white-space: nowrap;
+        font-size: 12px;
+        min-width: 40px;
+        max-width: 80px;
+      }
+      .status-approved {
+        background: #263238;
+        color: #4caf50;
+      }
+      .status-pending {
+        background: #333019;
+        color: #ff9800;
+      }
+      .status-rejected {
+        background: #2d2323;
+        color: #e57373;
+      }
+      .has-content {
+        cursor: pointer;
+        color: #90caf9;
+        text-decoration: underline;
+      }
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 1000;
+      }
+      .modal-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #23272f;
+        color: #e0e0e0;
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 600px;
+        width: 90%;
+        max-height: 80vh;
+        overflow-y: auto;
+      }
+      .close-modal {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        cursor: pointer;
+        font-size: 24px;
+        color: #888;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-header">
+      <div>
+        <h1>Přehled seminárních prací</h1>
+        <p class="subtitle">Akademický rok 2025/2026</p>
+      </div>
+    </div>
+    <div class="container">
+      <table id="seminarTable">
+        <thead>
+          <tr>
+            <th>Student</th>
+            <th>Vedoucí</th>
+            <th>Oponent</th>
+            <th>Název práce</th>
+            <th>Schválení vedoucího</th>
+            <th>Schválení oponenta</th>
+            <th>Cíle práce</th>
+            <th>K0 - hodnocení</th>
+            <th>K0 - známka</th>
+            <th>K1 - cíle</th>
+            <th>K1 - hodnocení</th>
+            <th>K1 - známka</th>
+            <th>K2 - cíle</th>
+            <th>K2 - hodnocení</th>
+            <th>K2 - známka</th>
+            <th>K3 - hodnocení</th>
+            <th>K3 - známka</th>
+            <th>Odevzdáno</th>
+            <th>Hodnocení vedoucího</th>
+            <th>Hodnocení oponenta</th>
+            <th>Praktická část</th>
+            <th>Teoretická část</th>
+            <th>Formální část</th>
+            <th>Obhajoba</th>
+            <th>Výsledná známka</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Jan Novák</td>
+            <td>Mgr. Karel Dvořák</td>
+            <td>Ing. Eva Malá</td>
+            <td>Analýza dat v Pythonu</td>
+            <td><span class="status status-approved">Schváleno</span></td>
+            <td><span class="status status-pending">Čeká</span></td>
+            <td>
+              <span
+                class="has-content"
+                onclick="showModal('Cíle práce - Jan Novák', 'Prozkoumat možnosti analýzy dat v Pythonu.')"
+                >Zobrazit</span
+              >
+            </td>
+            <td>
+              <span
+                class="has-content"
+                onclick="showModal('Konzultace 0 - Jan Novák', 'Splněno dle zadání.')"
+                >Zobrazit</span
+              >
+            </td>
+            <td><span class="grade">1,0</span></td>
+            <td>
+              <span
+                class="has-content"
+                onclick="showModal('Konzultace 1 - Jan Novák', 'Definovány cíle projektu.')"
+                >Zobrazit</span
+              >
+            </td>
+            <td>
+              <span
+                class="has-content"
+                onclick="showModal('Hodnocení K1 - Jan Novák', 'Velmi dobré.')"
+                >Zobrazit</span
+              >
+            </td>
+            <td><span class="grade">1,5</span></td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td><span class="status status-approved">Schváleno</span></td>
+            <td>
+              <span
+                class="has-content"
+                onclick="showModal('Hodnocení vedoucího - Jan Novák', 'Výborná práce.')"
+                >Zobrazit</span
+              >
+            </td>
+            <td>-</td>
+            <td><span class="grade">1,0</span></td>
+            <td><span class="grade">1,5</span></td>
+            <td><span class="grade">1,0</span></td>
+            <td><span class="grade">1,0</span></td>
+            <td><span class="grade">1,0</span></td>
+          </tr>
+          <tr>
+            <td>Petra Svobodová</td>
+            <td>Mgr. Karel Dvořák</td>
+            <td>Ing. Eva Malá</td>
+            <td>Webová aplikace pro školy</td>
+            <td><span class="status status-approved">Schváleno</span></td>
+            <td><span class="status status-approved">Schváleno</span></td>
+            <td>
+              <span
+                class="has-content"
+                onclick="showModal('Cíle práce - Petra Svobodová', 'Vytvořit webovou aplikaci pro správu školních dat.')"
+                >Zobrazit</span
+              >
+            </td>
+            <td>
+              <span
+                class="has-content"
+                onclick="showModal('Konzultace 0 - Petra Svobodová', 'Splněno dle zadání.')"
+                >Zobrazit</span
+              >
+            </td>
+            <td><span class="grade">1,0</span></td>
+            <td>
+              <span
+                class="has-content"
+                onclick="showModal('Konzultace 1 - Petra Svobodová', 'Definovány cíle projektu.')"
+                >Zobrazit</span
+              >
+            </td>
+            <td>
+              <span
+                class="has-content"
+                onclick="showModal('Hodnocení K1 - Petra Svobodová', 'Velmi dobré.')"
+                >Zobrazit</span
+              >
+            </td>
+            <td><span class="grade">1,0</span></td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td><span class="status status-approved">Schváleno</span></td>
+            <td>
+              <span
+                class="has-content"
+                onclick="showModal('Hodnocení vedoucího - Petra Svobodová', 'Výborná práce.')"
+                >Zobrazit</span
+              >
+            </td>
+            <td>-</td>
+            <td><span class="grade">1,0</span></td>
+            <td><span class="grade">1,0</span></td>
+            <td><span class="grade">1,0</span></td>
+            <td><span class="grade">1,0</span></td>
+          </tr>
+          <tr>
+            <td>Martin Černý</td>
+            <td>Ing. Eva Malá</td>
+            <td>Mgr. Karel Dvořák</td>
+            <td>Strojové učení v praxi</td>
+            <td><span class="status status-pending">Čeká</span></td>
+            <td><span class="status status-rejected">Zamítnuto</span></td>
+            <td>
+              <span
+                class="has-content"
+                onclick="showModal('Cíle práce - Martin Černý', 'Implementace ML algoritmů na reálných datech.')"
+                >Zobrazit</span
+              >
+            </td>
+            <td>-</td>
+            <td>-</td>
+            <td>
+              <span
+                class="has-content"
+                onclick="showModal('Konzultace 1 - Martin Černý', 'Zatím neodesláno.')"
+                >Zobrazit</span
+              >
+            </td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td><span class="status status-pending">Čeká</span></td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>Lucie Králová</td>
+            <td>Mgr. Karel Dvořák</td>
+            <td>Ing. Eva Malá</td>
+            <td>Mobilní aplikace pro zdraví</td>
+            <td><span class="status status-approved">Schváleno</span></td>
+            <td><span class="status status-approved">Schváleno</span></td>
+            <td>
+              <span
+                class="has-content"
+                onclick="showModal('Cíle práce - Lucie Králová', 'Navrhnout a vytvořit mobilní aplikaci pro sledování zdraví.')"
+                >Zobrazit</span
+              >
+            </td>
+            <td>
+              <span
+                class="has-content"
+                onclick="showModal('Konzultace 0 - Lucie Králová', 'Splněno.')"
+                >Zobrazit</span
+              >
+            </td>
+            <td><span class="grade">1,2</span></td>
+            <td>
+              <span
+                class="has-content"
+                onclick="showModal('Konzultace 1 - Lucie Králová', 'Cíle rozpracovány.')"
+                >Zobrazit</span
+              >
+            </td>
+            <td>
+              <span
+                class="has-content"
+                onclick="showModal('Hodnocení K1 - Lucie Králová', 'Dobré.')"
+                >Zobrazit</span
+              >
+            </td>
+            <td><span class="grade">1,3</span></td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td><span class="status status-approved">Schváleno</span></td>
+            <td>
+              <span
+                class="has-content"
+                onclick="showModal('Hodnocení vedoucího - Lucie Králová', 'Práce splnila očekávání.')"
+                >Zobrazit</span
+              >
+            </td>
+            <td>-</td>
+            <td><span class="grade">1,2</span></td>
+            <td><span class="grade">1,3</span></td>
+            <td><span class="grade">1,2</span></td>
+            <td><span class="grade">1,2</span></td>
+            <td><span class="grade">1,2</span></td>
+          </tr>
+          <tr>
+            <td>Tomáš Veselý</td>
+            <td>Ing. Eva Malá</td>
+            <td>Mgr. Karel Dvořák</td>
+            <td>Automatizace domácnosti</td>
+            <td><span class="status status-pending">Čeká</span></td>
+            <td><span class="status status-approved">Schváleno</span></td>
+            <td>
+              <span
+                class="has-content"
+                onclick="showModal('Cíle práce - Tomáš Veselý', 'Navrhnout systém pro automatizaci domácnosti.')"
+                >Zobrazit</span
+              >
+            </td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td><span class="status status-pending">Čeká</span></td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>Barbora Horská</td>
+            <td>Mgr. Karel Dvořák</td>
+            <td>Ing. Eva Malá</td>
+            <td>Bezpečnost webových aplikací</td>
+            <td><span class="status status-approved">Schváleno</span></td>
+            <td><span class="status status-rejected">Zamítnuto</span></td>
+            <td>
+              <span
+                class="has-content"
+                onclick="showModal('Cíle práce - Barbora Horská', 'Analyzovat bezpečnostní rizika webových aplikací.')"
+                >Zobrazit</span
+              >
+            </td>
+            <td>
+              <span
+                class="has-content"
+                onclick="showModal('Konzultace 0 - Barbora Horská', 'Splněno.')"
+                >Zobrazit</span
+              >
+            </td>
+            <td><span class="grade">1,7</span></td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td><span class="status status-approved">Schváleno</span></td>
+            <td>
+              <span
+                class="has-content"
+                onclick="showModal('Hodnocení vedoucího - Barbora Horská', 'Práce splnila zadání.')"
+                >Zobrazit</span
+              >
+            </td>
+            <td>-</td>
+            <td><span class="grade">1,7</span></td>
+            <td><span class="grade">1,7</span></td>
+            <td><span class="grade">1,7</span></td>
+            <td><span class="grade">1,7</span></td>
+            <td><span class="grade">1,7</span></td>
+          </tr>
+          <tr>
+            <td>David Polák</td>
+            <td>Ing. Eva Malá</td>
+            <td>Mgr. Karel Dvořák</td>
+            <td>Internet věcí v zemědělství</td>
+            <td><span class="status status-pending">Čeká</span></td>
+            <td><span class="status status-pending">Čeká</span></td>
+            <td>
+              <span
+                class="has-content"
+                onclick="showModal('Cíle práce - David Polák', 'Využití IoT pro monitoring v zemědělství.')"
+                >Zobrazit</span
+              >
+            </td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td><span class="status status-pending">Čeká</span></td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>Simona Urbanová</td>
+            <td>Mgr. Karel Dvořák</td>
+            <td>Ing. Eva Malá</td>
+            <td>Vizualizace dat v JavaScriptu</td>
+            <td><span class="status status-approved">Schváleno</span></td>
+            <td><span class="status status-approved">Schváleno</span></td>
+            <td>
+              <span
+                class="has-content"
+                onclick="showModal('Cíle práce - Simona Urbanová', 'Vytvořit interaktivní vizualizace dat.')"
+                >Zobrazit</span
+              >
+            </td>
+            <td>
+              <span
+                class="has-content"
+                onclick="showModal('Konzultace 0 - Simona Urbanová', 'Splněno.')"
+                >Zobrazit</span
+              >
+            </td>
+            <td><span class="grade">1,1</span></td>
+            <td>
+              <span
+                class="has-content"
+                onclick="showModal('Konzultace 1 - Simona Urbanová', 'Cíle rozpracovány.')"
+                >Zobrazit</span
+              >
+            </td>
+            <td>
+              <span
+                class="has-content"
+                onclick="showModal('Hodnocení K1 - Simona Urbanová', 'Dobré.')"
+                >Zobrazit</span
+              >
+            </td>
+            <td><span class="grade">1,2</span></td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td><span class="status status-approved">Schváleno</span></td>
+            <td>
+              <span
+                class="has-content"
+                onclick="showModal('Hodnocení vedoucího - Simona Urbanová', 'Práce splnila očekávání.')"
+                >Zobrazit</span
+              >
+            </td>
+            <td>-</td>
+            <td><span class="grade">1,1</span></td>
+            <td><span class="grade">1,2</span></td>
+            <td><span class="grade">1,1</span></td>
+            <td><span class="grade">1,1</span></td>
+            <td><span class="grade">1,1</span></td>
+          </tr>
+          <tr>
+            <td>Ondřej Beneš</td>
+            <td>Ing. Eva Malá</td>
+            <td>Mgr. Karel Dvořák</td>
+            <td>Robotika ve vzdělávání</td>
+            <td><span class="status status-rejected">Zamítnuto</span></td>
+            <td><span class="status status-pending">Čeká</span></td>
+            <td>
+              <span
+                class="has-content"
+                onclick="showModal('Cíle práce - Ondřej Beneš', 'Navrhnout robotický modul pro výuku.')"
+                >Zobrazit</span
+              >
+            </td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td><span class="status status-rejected">Zamítnuto</span></td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>Veronika Doležalová</td>
+            <td>Mgr. Karel Dvořák</td>
+            <td>Ing. Eva Malá</td>
+            <td>Cloudové služby pro firmy</td>
+            <td><span class="status status-approved">Schváleno</span></td>
+            <td><span class="status status-approved">Schváleno</span></td>
+            <td>
+              <span
+                class="has-content"
+                onclick="showModal('Cíle práce - Veronika Doležalová', 'Implementace cloudových řešení pro malé firmy.')"
+                >Zobrazit</span
+              >
+            </td>
+            <td>
+              <span
+                class="has-content"
+                onclick="showModal('Konzultace 0 - Veronika Doležalová', 'Splněno.')"
+                >Zobrazit</span
+              >
+            </td>
+            <td><span class="grade">1,4</span></td>
+            <td>
+              <span
+                class="has-content"
+                onclick="showModal('Konzultace 1 - Veronika Doležalová', 'Cíle rozpracovány.')"
+                >Zobrazit</span
+              >
+            </td>
+            <td>
+              <span
+                class="has-content"
+                onclick="showModal('Hodnocení K1 - Veronika Doležalová', 'Dobré.')"
+                >Zobrazit</span
+              >
+            </td>
+            <td><span class="grade">1,3</span></td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td><span class="status status-approved">Schváleno</span></td>
+            <td>
+              <span
+                class="has-content"
+                onclick="showModal('Hodnocení vedoucího - Veronika Doležalová', 'Práce splnila očekávání.')"
+                >Zobrazit</span
+              >
+            </td>
+            <td>-</td>
+            <td><span class="grade">1,4</span></td>
+            <td><span class="grade">1,3</span></td>
+            <td><span class="grade">1,4</span></td>
+            <td><span class="grade">1,4</span></td>
+            <td><span class="grade">1,4</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <h3 id="modal-title"></h3>
+        <div id="modal-content"></div>
+      </div>
+    </div>
+    <script>
+      function showModal(title, content) {
+        document.getElementById("modal-title").textContent = title;
+        document.getElementById("modal-content").textContent = content;
+        document.getElementById("modal").style.display = "block";
+      }
+      function closeModal() {
+        document.getElementById("modal").style.display = "none";
+      }
+      window.onclick = function (event) {
+        var modal = document.getElementById("modal");
+        if (event.target == modal) {
+          closeModal();
+        }
+      };
+    </script>
+  </body>
+</html>
